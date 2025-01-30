@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       {/* Navbar Container */}
-      <div className="px-6 md:px-12 lg:px-20 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className=" flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
         {/* Left Side (Logo) */}
         <div className="text-2xl md:text-3xl font-bold text-fuchsia-700">
