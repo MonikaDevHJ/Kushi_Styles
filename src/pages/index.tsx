@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import AllIItem from "../components/AllIItem"
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <Navbar/>
 
     <AllIItem/>
+    <Footer/>
 
    </div>
   );

@@ -24,7 +24,7 @@ const AllIItem = () => {
       <h1 className="text-3xl font-bold text-left mb-6 text-fuchsia-700">Categories</h1>
 
       {/* Ensure all items are in one row on large screens */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 md:gap-24 lg:gap-14 ">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <div className="w-20 h-20 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-44 lg:h-44 relative">
