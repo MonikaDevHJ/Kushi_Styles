@@ -20,18 +20,17 @@ const Offersitems: React.FC = () => {
       <div>
         <p className="text-3xl font-bold text-left mb-6 text-fuchsia-700">Today's Offers</p>
       </div>
-      <div className="overflow-hidden relative">
-        {/* Container for the scrolling images */}
-        <div className="image-wrapper animate-scroll">
-          {/* Repeat the images twice to create an infinite loop */}
-          {[...images, ...images].map((img, index) => (
+      <div className="scroll-wrapper">
+        <div className="scroll-container">
+          {/* Repeat images twice for continuous looping effect */}
+          {images.concat(images).map((img, index) => (
             <div key={index} className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80">
               <Image
                 src={img}
                 alt={`Image ${index + 1}`}
                 layout="intrinsic"
-                width={200} // You can adjust the width
-                height={200} // You can adjust the height
+                width={200}
+                height={200}
                 objectFit="contain"
                 className="rounded-lg shadow-lg"
               />
