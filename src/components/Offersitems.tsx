@@ -17,18 +17,27 @@ const images: StaticImageData[] = [
 const Offersitems: React.FC = () => {
   return (
     <div className="mt-20 px-4">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-        {images.map((img, index) => (
-          <div key={index} className="relative w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px] aspect-square">
-            <Image
-              src={img}
-              alt={`Image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-        ))}
+      <div>
+        <p className="text-3xl font-bold text-left mb-6 text-fuchsia-700">Today's Offers</p>
+      </div>
+      <div className="overflow-hidden relative">
+        {/* Container for the scrolling images */}
+        <div className="image-wrapper animate-scroll">
+          {/* Repeat the images twice to create an infinite loop */}
+          {[...images, ...images].map((img, index) => (
+            <div key={index} className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80">
+              <Image
+                src={img}
+                alt={`Image ${index + 1}`}
+                layout="intrinsic"
+                width={200} // You can adjust the width
+                height={200} // You can adjust the height
+                objectFit="contain"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
