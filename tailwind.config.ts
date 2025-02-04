@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,12 +9,16 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      animation: {
+        scroll: "scroll 30s linear infinite", // Adjust scrolling speed (time in seconds)
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" }, // Start from the right
+          "100%": { transform: "translateX(-50%)" }, // Move left
+        },
       },
     },
   },
   plugins: [],
 } satisfies Config;
-
