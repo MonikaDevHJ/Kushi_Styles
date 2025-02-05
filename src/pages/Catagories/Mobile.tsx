@@ -2,8 +2,8 @@ import React from 'react'
 
 const Mobile = () => {
   return (
-    <div>
-     <p>Mobiles</p> 
+    <div className='mt-8'>
+     <p>Mobilesdfghjs</p> 
     </div>
   )
 }
