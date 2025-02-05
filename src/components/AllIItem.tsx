@@ -30,10 +30,10 @@ const AllIItem: React.FC = () => {
   return (
     <div className="container mx-auto mt-14 px-4">
       {/* Align heading to the left */}
-      <h1 className="text-3xl font-bold text-left mb-6 text-fuchsia-700">Categories</h1>
+      <h1 className="text-3xl font-bold text-left mb-6  text-fuchsia-700">Categories</h1>
 
       {/* Grid layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 md:gap-24 lg:gap-14">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 md:gap-24 lg:gap-52">
         {items.map((item, index) => (
           <Link key={index} href={item.link} passHref>
             <div className="flex flex-col items-center cursor-pointer">
