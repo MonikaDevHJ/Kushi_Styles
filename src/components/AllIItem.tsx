@@ -28,7 +28,7 @@ const items: Item[] = [
 
 const AllIItem: React.FC = () => {
   return (
-    <div className="container mx-auto mt-14 px-4">
+    <div className="container mx-auto mt-1">
       {/* Align heading to the left */}
       <h1 className="text-3xl font-bold text-left mb-6  text-fuchsia-700">Categories</h1>
 
