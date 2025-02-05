@@ -3,16 +3,15 @@ import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="w-full">
+    <div className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
       {/* Navbar Container */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-6 md:px-12 lg:px-20 py-4">
         {/* Left Side (Logo) */}
         <div className="text-2xl md:text-3xl font-bold text-fuchsia-700">
           Kushi Styles
         </div>
 
-        {/* Search Bar (Centered on Medium & Large Screens, Below on Small Screens) */}
+        {/* Search Bar */}
         <div className="w-full sm:w-auto sm:flex-1 sm:flex sm:justify-center order-2 sm:order-none mt-4">
           <div className="flex relative items-center rounded-md px-3 py-1 h-12 w-full sm:w-80 md:w-96 lg:w-[28rem]">
             <FaSearch className="text-gray-500 text-2xl absolute left-3 top-1/2 -translate-y-1/2 ml-4" />
@@ -24,7 +23,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Right Side (Profile, Cart Icons, and Login Button) */}
+        {/* Right Side (Profile, Cart, Login Button) */}
         <div className="flex items-center gap-6">  
           <div className="flex gap-2">
             <FaUser className="text-3xl text-gray-600 cursor-pointer" />
