@@ -28,14 +28,13 @@ const items: Item[] = [
 
 const AllIItem: React.FC = () => {
   return (
-    <div className="container    mt-1">
+    <div className=" mt-5 sm:mt-52 lg:mt-1 md:mt-2 w-full ">
       {/* Align heading to the left */}
-      <div className="w-full  mt-1 -ml-20 border">
+      <div className="w-full mt-1 ">  
         <h1 className="text-3xl font-bold text-left mb-6 text-fuchsia-700">
           Categories
         </h1>
       </div>
-
 
       {/* Grid layout */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 md:gap-24 lg:gap-52">
