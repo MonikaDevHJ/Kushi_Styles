@@ -8,12 +8,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 min-h-screen flex flex-col">
       {/* Fixed Navbar */}
       <Navbar />
-      
-      {/* Page Content with padding-top to avoid overlap */}
-      <div className="pt-[80px] px-6 md:px-12 lg:px-20  py-4">
+
+      {/* Ensure Page Content is Below Navbar */}
+      <div className="flex-1 pt-[50px] sm:pt-[90px] md:pt-[100px] px-4 sm:px-6 md:px-12 lg:px-12 py-2">
         {children}
       </div>
 
