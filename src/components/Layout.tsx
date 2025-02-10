@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       
       {/* Page Content with padding-top to avoid overlap */}
-      <div className="pt-[80px] px-6 md:px-12 lg:px-20 py-4">
+      <div className="pt-[80px] px-6 md:px-12 lg:px-20  py-4">
         {children}
       </div>
 

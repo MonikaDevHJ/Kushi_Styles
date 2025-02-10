@@ -19,7 +19,7 @@ type Item = {
 const items: Item[] = [
   { src: Mobiles, name: "Mobiles", link: "/Catagories/Mobile" },
   { src: WomensDress, name: "Women's Dress", link: "/Catagories/Womens" },
-  { src: Men, name: "Men's Fashion", link: "/Catagories/Men" }, 
+  { src: Men, name: "Men's Fashion", link: "/Catagories/Men" },
   { src: Kids, name: "Kids Wear", link: "/Catagories/Kids" },
   { src: Gifts, name: "Gifts", link: "/Catagories/gifts" },
   { src: Groccery, name: "Groceries", link: "/Catagories/grocery" },
@@ -28,9 +28,14 @@ const items: Item[] = [
 
 const AllIItem: React.FC = () => {
   return (
-    <div className="container mx-auto mt-1">
+    <div className="container    mt-1">
       {/* Align heading to the left */}
-      <h1 className="text-3xl font-bold text-left mb-6  text-fuchsia-700">Categories</h1>
+      <div className="w-full  mt-1 -ml-20 border">
+        <h1 className="text-3xl font-bold text-left mb-6 text-fuchsia-700">
+          Categories
+        </h1>
+      </div>
+
 
       {/* Grid layout */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 md:gap-24 lg:gap-52">
