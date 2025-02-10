@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
       {/* Navbar Container */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-6 md:px-12 lg:px-20 py-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-6 md:px-12 lg:px-14 py-4">
         {/* Left Side (Logo) */}
         <div className="text-2xl md:text-3xl font-bold text-fuchsia-700">
           Kushi Styles
