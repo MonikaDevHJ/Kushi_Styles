@@ -8,6 +8,8 @@ import Kids from "../assets/Kids.png";
 import Gifts from "../assets/Gifts.png";
 import Groccery from "../assets/Groccery.png";
 import Beauty from "../assets/Beauty.png";
+import vivo1 from "../assets/vivo1.png";
+import Gift from "../pages/Catagories/Gift"
 
 // Define the type for each item
 type Item = {
