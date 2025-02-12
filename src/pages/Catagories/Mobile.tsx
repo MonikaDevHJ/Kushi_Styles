@@ -27,7 +27,8 @@ const Mobile = () => {
           <div className="">
             <p className="Select Featuries">Select Features :</p>
 
-            <div className="">
+            <div className="mt-2">
+
               <p className=" flex">
                 <input type="checkbox" className="mr-2 accent-blue-500" />
                 <span>Curve Display</span>

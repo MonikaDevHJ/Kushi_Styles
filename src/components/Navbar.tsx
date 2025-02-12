@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { FaSearch, FaUser, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import Link from "next/link";
+
+import {
+  FaSearch,
+  FaUser,
+  FaShoppingCart,
+  FaBars,
+  FaTimes
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +17,9 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full px-4 md:px-12 lg:px-14">
         {/* Left Side (Logo) */}
         <div className="text-2xl md:text-3xl font-bold text-fuchsia-700">
-          Kushi Styles
+          <Link href="/" className="no-underline text-fuchsia-700">
+            Kushi Styles
+          </Link>
         </div>
 
         {/* Search Bar (Hidden on small screens) */}
@@ -28,12 +38,16 @@ const Navbar = () => {
         <div className="hidden sm:flex items-center gap-6">
           <div className="flex items-center gap-2">
             <FaUser className="text-2xl text-gray-600 cursor-pointer" />
-            <p className="hidden sm:block font-semibold text-fuchsia-700">Profile</p>
+            <p className="hidden sm:block font-semibold text-fuchsia-700">
+              Profile
+            </p>
           </div>
 
           <div className="flex items-center gap-2">
             <FaShoppingCart className="text-2xl text-gray-600 cursor-pointer" />
-            <p className="hidden sm:block font-semibold text-fuchsia-700">Cart</p>
+            <p className="hidden sm:block font-semibold text-fuchsia-700">
+              Cart
+            </p>
           </div>
 
           <button className="px-6 py-2 bg-fuchsia-700 text-white font-semibold rounded-full hover:bg-fuchsia-600 transition duration-300">
