@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import vivo1 from "../../assets/vivo1.png";
 import vivo2 from "../../assets/vivo2.png";
@@ -10,9 +10,22 @@ import iphone2 from "../../assets/iphone2.png";
 import iphone3 from "../../assets/iphone3.png";
 import iphone4 from "../../assets/iphone4.png";
 
-
-
 const Mobile = () => {
+  const [selectedBrand, setSelectedBrand] = useState("All");
+
+  const mobiles = [
+    { name: "Vivo v29e", brand: "vivo", image: "vivo1" },
+    { name: "vivo v200", brand: "vivo", image: "vivo2" },
+    { name: "vivo v30", brand: "vivo", image: "vivo3" },
+    { name: "vivo v300", brand: "vivo", image: "vivo4" },
+    { name: "vivo y2", brand: "vivo", image: "vivo5" },
+    { name: "iphone 14", brand: "iphone", image: "iphone1" },
+    { name: "iPhone 14", brand: "Iphone", image: iphone4 },
+    { name: "iPhone 13", brand: "Iphone", image: iphone3 },
+    { name: "iPhone 12", brand: "Iphone", image: iphone2 },
+    { name: "iPhone 11", brand: "Iphone", image: iphone1 }
+  ];
+
   return (
     <div className="mt-10 p-4">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -25,7 +38,13 @@ const Mobile = () => {
             <label className="block text-black font-medium">
               Select Brand:
             </label>
-            <select name="" id="" className="w-full p-2 border rounded mt-2">
+            <select
+              name=""
+              id=""
+              className="w-full p-2 border rounded mt-2"
+              value={selectedBrand}
+              onChange={(e) => setSelectedBrand(e.target.value)}
+            >
               <option value="">All Brands</option>
               <option value="Vivo">Vivo</option>
               <option value="Iphone">Iphone</option>
@@ -179,8 +198,6 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
             </div>
-         
-         
           </div>
         </div>
       </div>
