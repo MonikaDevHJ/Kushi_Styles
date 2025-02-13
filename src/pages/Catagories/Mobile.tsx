@@ -14,17 +14,18 @@ const Mobile = () => {
   const [selectedBrand, setSelectedBrand] = useState("All");
 
   const mobiles = [
-    { name: "Vivo v29e", brand: "vivo", image: "vivo1" },
-    { name: "vivo v200", brand: "vivo", image: "vivo2" },
-    { name: "vivo v30", brand: "vivo", image: "vivo3" },
-    { name: "vivo v300", brand: "vivo", image: "vivo4" },
-    { name: "vivo y2", brand: "vivo", image: "vivo5" },
-    { name: "iphone 14", brand: "iphone", image: "iphone1" },
+    { name: "Vivo v29e", brand: "vivo", image: vivo1 },
+    { name: "vivo v200", brand: "vivo", image: vivo2 },
+    { name: "vivo v30", brand: "vivo", image: vivo3 },
+    { name: "vivo v300", brand: "vivo", image: vivo4 },
+    { name: "vivo y2", brand: "vivo", image: vivo5 },
+    { name: "iphone 14", brand: "iphone", image: iphone1 },
     { name: "iPhone 14", brand: "Iphone", image: iphone4 },
     { name: "iPhone 13", brand: "Iphone", image: iphone3 },
     { name: "iPhone 12", brand: "Iphone", image: iphone2 },
     { name: "iPhone 11", brand: "Iphone", image: iphone1 }
   ];
+  
 
   return (
     <div className="mt-10 p-4">
@@ -96,7 +97,20 @@ const Mobile = () => {
           <div className="grid grid-cols-1 sm:grid-cols-1 md-grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Card 1 */}
 
-            <div className="bg-white p-4 shadow-md rounded-lg">
+            {mobiles.map((mobiles, index) => (
+              <div key={index} className="bg-white p-4 shadow-md rounded-lg">
+                <Image
+                  src={mobiles.image}
+                  alt={mobiles.name}
+                  objectFit="contain"
+                  className="rounded-lg shadow-md"
+                  width={150}
+                  height={150}
+                />
+                <p className="text-center mt-2 font-semibold">{mobiles.name}</p>
+              </div>
+            ))}
+            {/* <div className="bg-white p-4 shadow-md rounded-lg">
               <Image
                 src={vivo5}
                 alt="uytf"
@@ -143,6 +157,7 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivoy2</p>
             </div>
+           
             <div className="bg-white p-4 shadow-md rounded-lg">
               <Image
                 src={vivo4}
@@ -154,6 +169,7 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
             </div>
+           
             <div className="bg-white p-4 shadow-md rounded-lg">
               <Image
                 src={iphone4}
@@ -165,6 +181,7 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
             </div>
+           
             <div className="bg-white p-4 shadow-md rounded  -lg">
               <Image
                 src={iphone3}
@@ -176,6 +193,7 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
             </div>
+           
             <div className="bg-white p-4 shadow-md rounded-lg">
               <Image
                 src={iphone2}
@@ -187,6 +205,7 @@ const Mobile = () => {
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
             </div>
+        
             <div className="bg-white p-4 shadow-md rounded-lg">
               <Image
                 src={iphone1}
@@ -197,7 +216,7 @@ const Mobile = () => {
                 height={150}
               />
               <p className="text-center mt-2 font-semibold">Vivo v209e</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
