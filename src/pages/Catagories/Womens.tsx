@@ -13,6 +13,7 @@ import iphone4 from "../../assets/iphone4.png";
 const Mobile = () => {
   const [selectedBrand, setSelectedBrand] = useState("All Brands");
 
+  
   const mobiles = [
     { name: "Vivo v29e", brand: "Vivo", image: vivo1 },
     { name: "vivo v200", brand: "Vivo", image: vivo2 },
