@@ -14,23 +14,25 @@ const Mobile = () => {
   const [selectedBrand, setSelectedBrand] = useState("All Brands");
 
   const mobiles = [
-    { name: "Vivo v29e", brand: "Vivo", image: vivo1 },
-    { name: "vivo v200", brand: "Vivo", image: vivo2 },
-    { name: "vivo v30", brand: "Vivo", image: vivo3 },
-    { name: "vivo v300", brand: "Vivo", image: vivo4 },
-    { name: "vivo y2", brand: "Vivo", image: vivo5 },
-    { name: "iPhone 14", brand: "Iphone", image: iphone1 },
-    { name: "iPhone 14", brand: "Iphone", image: iphone4 },
-    { name: "iPhone 13", brand: "Iphone", image: iphone3 },
-    { name: "iPhone 12", brand: "Iphone", image: iphone2 },
-    { name: "iPhone 11", brand: "Iphone", image: iphone1 }
+    { name: "Vivo v29e", brand: "Vivo", image: vivo1, price: 2999 },
+    { name: "vivo v200", brand: "Vivo", image: vivo2, price: 4999 },
+    { name: "vivo v30", brand: "Vivo", image: vivo3, price: 7999 },
+    { name: "vivo v300", brand: "Vivo", image: vivo4, price: 8999 },
+    { name: "vivo y2", brand: "Vivo", image: vivo5, price: 2999 },
+    { name: "iPhone 14", brand: "Iphone", image: iphone1, price: 2599 },
+    { name: "iPhone 14", brand: "Iphone", image: iphone4, price: 2999 },
+    { name: "iPhone 13", brand: "Iphone", image: iphone3, price: 3599 },
+    { name: "iPhone 12", brand: "Iphone", image: iphone2, price: 3999 },
+    { name: "iPhone 11", brand: "Iphone", image: iphone1, price: 9999 }
   ];
 
   // ✅ Filter mobiles based on selected brand
   const filteredMobiles =
     selectedBrand === "All Brands"
       ? mobiles
-      : mobiles.filter((mobile) => mobile.brand.toLowerCase() === selectedBrand.toLowerCase());
+      : mobiles.filter(
+          (mobile) => mobile.brand.toLowerCase() === selectedBrand.toLowerCase()
+        );
 
   return (
     <div className="mt-10 p-4">
@@ -41,7 +43,9 @@ const Mobile = () => {
 
           {/* Dropdown For Brands */}
           <div className="mb-4">
-            <label className="block text-black font-medium">Select Brand:</label>
+            <label className="block text-black font-medium">
+              Select Brand:
+            </label>
             <select
               className="w-full p-2 border rounded mt-2"
               value={selectedBrand}
@@ -93,7 +97,15 @@ const Mobile = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredMobiles.length > 0 ? (
               filteredMobiles.map((mobile, index) => (
-                <div key={index} className="bg-white p-4 shadow-md rounded-lg">
+                <div
+                  key={index}
+                  className="bg-white p-4 shadow-md rounded-lg relative"
+                >
+                  {/* Wishlist Heart Icon Button */}
+                  <button className="absolute top-2 right-2 text-2xl text-gray-500">
+                    🤍
+                  </button>
+
                   <Image
                     src={mobile.image}
                     alt={mobile.name}
@@ -102,7 +114,20 @@ const Mobile = () => {
                     width={150}
                     height={150}
                   />
-                  <p className="text-center mt-2 font-semibold">{mobile.name}</p>
+                  <p className="text-center mt-2 font-semibold">
+                    {mobile.name}
+                  </p>
+
+
+                  {/* Price and Add to Cart Section */}
+                  <div className="flex justify-between items-center mt-4">  
+                  <p className="text-center mt-2 font-semibold">
+                    ₹{mobile.price}
+                  </p>
+                      <button className="text-gray-500 text-3xl hover:text-blue-600">
+                      🛒
+                    </button>
+                  </div>
                 </div>
               ))
             ) : (
