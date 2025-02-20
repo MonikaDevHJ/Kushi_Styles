@@ -9,7 +9,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/Login"); // Navigate to the login page
+    router.push("/NavbarComp/Login"); // Navigate to the login page
   };
 
   return (

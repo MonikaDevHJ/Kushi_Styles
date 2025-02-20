@@ -15,7 +15,7 @@ const Login = () => {
             <input type="password" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-500" placeholder="Enter your password" />
           </div>
           <button type="submit" className="w-full bg-fuchsia-700 text-white py-2 rounded-md hover:bg-fuchsia-600 transition duration-300">
-            Login
+            Login+
           </button>
         </form>
       </div>
