@@ -94,7 +94,7 @@ const Mobile = () => {
           <p className="text-black text-2xl md:text-3xl font-bold">Mobiles</p>
 
           {/* Grid for Mobile Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
             {filteredMobiles.length > 0 ? (
               filteredMobiles.map((mobile, index) => (
                 <div
@@ -117,15 +117,18 @@ const Mobile = () => {
                   <p className="text-center mt-2 font-semibold">
                     {mobile.name}
                   </p>
-
+                  <p className="text-center mt-2 font-semibold">
+                      ₹{mobile.price}
+                    </p>
 
                   {/* Price and Add to Cart Section */}
-                  <div className="flex justify-between items-center mt-4">  
-                  <p className="text-center mt-2 font-semibold">
-                    ₹{mobile.price}
-                  </p>
-                      <button className="text-gray-500 text-3xl hover:text-blue-600">
-                      🛒
+                  <div className="flex justify-between items-center mt-8">
+                   
+                    <button className="bg-fuchsia-700 text-white px-1 py-1   rounded-md font-bold hover:bg-fuchsia-500 transition duration-300">
+                      Buy Now
+                    </button>
+                    <button className="bg-fuchsia-700 text-white px-1 py-1   rounded-md font-bold hover:bg-fuchsia-500 transition duration-300">
+                      Add To Cart
                     </button>
                   </div>
                 </div>

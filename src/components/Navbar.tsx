@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router"; 
-import { FaSearch, FaUser, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
-import Login from "../pages/NavbarComp/Login"
+import { useRouter } from "next/router";
+import {
+  FaSearch,
+  FaUser,
+  FaShoppingCart,
+  FaBars,
+  FaTimes
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/NavbarComp/Login"); // Navigate to the login page
+    router.push("/Login"); // Navigate to the login page (updated path)
   };
 
   return (
@@ -17,38 +22,51 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full px-4 md:px-12 lg:px-14">
         {/* Logo */}
         <div className="text-2xl md:text-3xl font-bold text-fuchsia-700">
-          <Link href="/" className="no-underline text-fuchsia-700">Kushi Styles</Link>
+          <Link href="/" className="no-underline text-fuchsia-700">
+            Kushi Styles
+          </Link>
         </div>
 
         {/* Search Bar */}
         <div className="hidden sm:flex justify-center">
           <div className="flex relative items-center w-80 md:w-96 lg:w-[28rem]">
             <FaSearch className="text-gray-500 text-xl absolute left-3 top-1/2 -translate-y-1/2" />
-            <input type="text" placeholder="Search"
-              className="pl-10 pr-4 py-2 w-full focus:outline-none border-2 border-fuchsia-200 hover:border-fuchsia-300 focus:border-fuchsia-300 hover:bg-fuchsia-100 focus:bg-fuchsia-200 text-lg rounded-2xl transition duration-300" />
+            <input
+              type="text"
+              placeholder="Search"
+              className="pl-10 pr-4 py-2 w-full focus:outline-none border-2 border-fuchsia-200 hover:border-fuchsia-300 focus:border-fuchsia-300 hover:bg-fuchsia-100 focus:bg-fuchsia-200 text-lg rounded-2xl transition duration-300"
+            />
           </div>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden sm:flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <FaUser className="text-2xl text-gray-600 cursor-pointer" />
-            <p className="hidden sm:block font-semibold text-fuchsia-700">Profile</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaShoppingCart className="text-2xl text-gray-600 cursor-pointer" />
-            <p className="hidden sm:block font-semibold text-fuchsia-700">Cart</p>
-          </div>
+          <Link href="/profile" className="flex items-center gap-2 cursor-pointer">
+            <FaUser className="text-2xl text-gray-600" />
+            <p className="hidden sm:block font-semibold text-fuchsia-700">
+              Profile
+            </p>
+          </Link>
+          <Link href="/cart" className="flex items-center gap-2 cursor-pointer">
+            <FaShoppingCart className="text-2xl text-gray-600" />
+            <p className="hidden sm:block font-semibold text-fuchsia-700">
+              Cart
+            </p>
+          </Link>
           {/* Updated Login Button */}
-          <button 
-            onClick={handleLogin} 
-            className="px-6 py-2 bg-fuchsia-700 text-white font-semibold rounded-full hover:bg-fuchsia-600 transition duration-300">
+          <button
+            onClick={handleLogin}
+            className="px-6 py-2 bg-fuchsia-700 text-white font-semibold rounded-full hover:bg-fuchsia-600 transition duration-300"
+          >
             Login
           </button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="sm:hidden text-2xl text-fuchsia-700" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="sm:hidden text-2xl text-fuchsia-700"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -56,18 +74,29 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="absolute top-[70px] left-0 w-full bg-white shadow-md flex flex-col items-center py-4 sm:hidden">
-          <div className="flex items-center gap-2 py-2">
+          {/* Profile Link */}
+          <Link
+            href="/profile"
+            className="flex items-center gap-2 py-2 cursor-pointer"
+          >
             <FaUser className="text-2xl text-gray-600" />
             <p className="font-semibold text-fuchsia-700">Profile</p>
-          </div>
-          <div className="flex items-center gap-2 py-2">
+          </Link>
+
+          {/* Cart Link */}
+          <Link
+            href="cart"
+            className="flex items-center gap-2 py-2 cursor-pointer"
+          >
             <FaShoppingCart className="text-2xl text-gray-600" />
             <p className="font-semibold text-fuchsia-700">Cart</p>
-          </div>
+          </Link>
+
           {/* Updated Mobile Login Button */}
-          <button 
-            onClick={handleLogin} 
-            className="px-6 py-2 bg-fuchsia-700 text-white font-semibold rounded-full hover:bg-fuchsia-600 transition duration-300">
+          <button
+            onClick={handleLogin}
+            className="px-6 py-2 bg-fuchsia-700 text-white font-semibold rounded-full hover:bg-fuchsia-600 transition duration-300"
+          >
             Login
           </button>
         </div>
