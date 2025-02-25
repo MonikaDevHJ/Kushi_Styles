@@ -24,6 +24,7 @@ const Login = () => {
             <label className="block text-gray-700 font-semibold">Email</label>
             <input
               type="email"
+              
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
               placeholder="Enter your email"
             />
